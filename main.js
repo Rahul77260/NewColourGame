@@ -3,7 +3,8 @@ let Boxes=document.querySelectorAll('.boxes .box');
 let playbtn = document.querySelector("#color");
 let easyBtn = document.querySelector("#easy");
 let mediumBtn = document.querySelector("#medium");
-var hardBtn = document.querySelector("#hard");
+let hardBtn = document.querySelector("#hard");
+let newGame = document.querySelector("#newgame");
 let h1=document.querySelector('.h1');
 let colors=generateRandomColors(6);
 
@@ -92,10 +93,11 @@ playbtn.addEventListener("click",()=>{
   console.log(colors.length);
   pickedColor = colors[Math.floor(Math.random() * boxCount)];
   h1.textContent = pickedColor;
-  for (var i = 0; i < Boxes.length; i++) {
+  for (let i = 0; i < Boxes.length; i++) {
       Boxes[i].style.background = colors[i];
   }
 });
+
 //if we clicked on the box and it match than it will be set the all boxes to same colour 
 for(let i=0;i<colors.length;i++){
 Boxes[i].style.background=colors[i];
@@ -108,7 +110,7 @@ Boxes[i].addEventListener('click',()=>{
    
   }
   else{
-    Boxes[i].style.background="#2f2f2f";
+    Boxes[i].style.background="none";
   }
 })
 }
