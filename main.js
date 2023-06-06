@@ -97,6 +97,22 @@ playbtn.addEventListener("click",()=>{
       Boxes[i].style.background = colors[i];
   }
 });
+newGame.addEventListener("click",()=>{
+  // document.querySelector(".header").style.background = "rgb(233, 119, 119)";
+
+  // statusText.textContent = "Let's Play!!";
+  easyBtn.style.background ="none";
+  hardBtn.style.background ="none";
+  mediumBtn.style.background ="none";
+  colors =generateRandomColors(boxCount);
+  console.log(colors);
+  console.log(colors.length);
+  pickedColor = colors[Math.floor(Math.random() * boxCount)];
+  h1.textContent = pickedColor;
+  for (let i = 0; i < Boxes.length; i++) {
+      Boxes[i].style.background = colors[i];
+  }
+});
 
 //if we clicked on the box and it match than it will be set the all boxes to same colour 
 for(let i=0;i<colors.length;i++){
